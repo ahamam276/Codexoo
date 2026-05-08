@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trend Dash — 60 Second Viral Arcade Game</title>
+    <meta
+      name="description"
+      content="Play Trend Dash, a fast 60-second arcade game with daily challenges, shareable scores, and viral power-ups."
+    />
+    <meta name="theme-color" content="#14042f" />
+    <meta property="og:title" content="Trend Dash — Can you beat today's score?" />
+    <meta
+      property="og:description"
+      content="Collect trends, dodge doomscroll traps, and share your 60-second score."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect fill='%2314042f' width='1200' height='630'/%3E%3Ctext x='80' y='210' fill='%23fff' font-size='92' font-family='Arial' font-weight='700'%3ETrend Dash%3C/text%3E%3Ctext x='84' y='330' fill='%23ffdf6e' font-size='54' font-family='Arial'%3EBeat today's 60-second score%3C/text%3E%3Ccircle cx='950' cy='285' r='120' fill='%23ff4fd8'/%3E%3C/svg%3E" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-panel" aria-label="Trend Dash game">
+        <div class="hud">
+          <div><span>Score</span><strong id="score">0</strong></div>
+          <div><span>Best</span><strong id="best">0</strong></div>
+          <div><span>Streak</span><strong id="streak">0x</strong></div>
+          <div><span>Time</span><strong id="time">60</strong></div>
+        </div>
+
+        <div class="canvas-wrap" id="gameBoard">
+          <div class="game-preview" id="gamePreview" aria-hidden="true">
+            <div class="preview-orb preview-player"></div>
+            <div class="preview-orb preview-trend one">★</div>
+            <div class="preview-orb preview-trend two">★</div>
+            <div class="preview-orb preview-trap">☠</div>
+            <p class="preview-copy">The game is here — press Start or use the arrow keys.</p>
+          </div>
+          <canvas id="game" width="960" height="540" aria-label="Playable game area"></canvas>
+          <noscript>Enable JavaScript to play Trend Dash.</noscript>
+        </div>
+
+        <div class="controls">
+          <button id="startButton" class="primary">Start viral run</button>
+          <button id="shareButton" type="button">Share my score</button>
+          <button id="copyButton" type="button">Copy challenge link</button>
+        </div>
+
+        <p class="instructions">
+          Move with <kbd>WASD</kbd>, <kbd>arrow keys</kbd>, mouse, or touch. Grab
+          ⭐ trends, chain streaks, and avoid 💀 doomscroll traps.
+        </p>
+      </section>
+
+      <section class="hero" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">Daily challenge · 60 seconds · Shareable score</p>
+          <h1 id="game-title">Trend Dash</h1>
+          <p class="tagline">
+            Collect glowing trends, dodge the doomscroll, and prove your reflexes
+            before the internet moves on.
+          </p>
+        </div>
+        <aside class="share-card" aria-label="Today's challenge details">
+          <span>Today's seed</span>
+          <strong id="dailySeed">Loading…</strong>
+          <p>Same pattern for everyone today. Bragging rights reset at midnight.</p>
+        </aside>
+      </section>
+
+      <section class="growth-grid" aria-label="Why this game is built for visitors">
+        <article>
+          <h2>Daily replay hook</h2>
+          <p>Everyone gets the same daily challenge seed, so score screenshots feel competitive and timely.</p>
+        </article>
+        <article>
+          <h2>One-tap sharing</h2>
+          <p>The Share button creates a ready-made challenge message for social apps, DMs, and group chats.</p>
+        </article>
+        <article>
+          <h2>Instant play</h2>
+          <p>No login, no downloads, no friction—just a lightweight static web game that loads fast.</p>
+        </article>
+      </section>
+    </main>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="game.js" defer></script>
+  </body>
+</html>

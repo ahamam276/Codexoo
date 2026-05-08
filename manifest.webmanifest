@@ -1,0 +1,9 @@
+{
+  "name": "Trend Dash",
+  "short_name": "TrendDash",
+  "description": "A 60-second daily challenge arcade game built for sharing.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#090116",
+  "theme_color": "#14042f"
+}
