@@ -21,22 +21,6 @@
   </head>
   <body>
     <main class="shell">
-      <section class="hero" aria-labelledby="game-title">
-        <div>
-          <p class="eyebrow">Daily challenge · 60 seconds · Shareable score</p>
-          <h1 id="game-title">Trend Dash</h1>
-          <p class="tagline">
-            Collect glowing trends, dodge the doomscroll, and prove your reflexes
-            before the internet moves on.
-          </p>
-        </div>
-        <aside class="share-card" aria-label="Today's challenge details">
-          <span>Today's seed</span>
-          <strong id="dailySeed">Loading…</strong>
-          <p>Same pattern for everyone today. Bragging rights reset at midnight.</p>
-        </aside>
-      </section>
-
       <section class="game-panel" aria-label="Trend Dash game">
         <div class="hud">
           <div><span>Score</span><strong id="score">0</strong></div>
@@ -45,7 +29,14 @@
           <div><span>Time</span><strong id="time">60</strong></div>
         </div>
 
-        <div class="canvas-wrap">
+        <div class="canvas-wrap" id="gameBoard">
+          <div class="game-preview" id="gamePreview" aria-hidden="true">
+            <div class="preview-orb preview-player"></div>
+            <div class="preview-orb preview-trend one">★</div>
+            <div class="preview-orb preview-trend two">★</div>
+            <div class="preview-orb preview-trap">☠</div>
+            <p class="preview-copy">The game is here — press Start or use the arrow keys.</p>
+          </div>
           <canvas id="game" width="960" height="540" aria-label="Playable game area"></canvas>
           <noscript>Enable JavaScript to play Trend Dash.</noscript>
         </div>
@@ -60,6 +51,22 @@
           Move with <kbd>WASD</kbd>, <kbd>arrow keys</kbd>, mouse, or touch. Grab
           ⭐ trends, chain streaks, and avoid 💀 doomscroll traps.
         </p>
+      </section>
+
+      <section class="hero" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">Daily challenge · 60 seconds · Shareable score</p>
+          <h1 id="game-title">Trend Dash</h1>
+          <p class="tagline">
+            Collect glowing trends, dodge the doomscroll, and prove your reflexes
+            before the internet moves on.
+          </p>
+        </div>
+        <aside class="share-card" aria-label="Today's challenge details">
+          <span>Today's seed</span>
+          <strong id="dailySeed">Loading…</strong>
+          <p>Same pattern for everyone today. Bragging rights reset at midnight.</p>
+        </aside>
       </section>
 
       <section class="growth-grid" aria-label="Why this game is built for visitors">
